@@ -9,6 +9,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
 
 export default function Index() {
   const [formData, setFormData] = useState({
@@ -36,26 +39,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <h1 className="text-xl font-semibold text-gray-900">CORPORATE EVENTS</h1>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Услуги</a>
-              <a href="#portfolio" className="text-gray-600 hover:text-primary transition-colors">Портфолио</a>
-              <a href="#pricing" className="text-gray-600 hover:text-primary transition-colors">Цены</a>
-              <a href="#blog" className="text-gray-600 hover:text-primary transition-colors">Блог</a>
-              <a href="#contacts" className="text-gray-600 hover:text-primary transition-colors">Контакты</a>
-            </nav>
-            <Button className="bg-primary hover:bg-primary/90 text-white">
-              Заказать звонок
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-white py-20">
@@ -174,7 +158,9 @@ export default function Index() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full">Узнать подробнее</Button>
+                <Link to="/teambuilding">
+                  <Button className="w-full">Узнать подробнее</Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -187,7 +173,9 @@ export default function Index() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full">Узнать подробнее</Button>
+                <Link to="/corporate-events">
+                  <Button className="w-full">Узнать подробнее</Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -200,7 +188,9 @@ export default function Index() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full">Узнать подробнее</Button>
+                <Link to="/new-year">
+                  <Button className="w-full">Узнать подробнее</Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
